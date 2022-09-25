@@ -1,9 +1,8 @@
-// Inicio
-console.log(`Ejercicio #01`);
-let _start;
-_start = document.getElementById("start");
-
 function proccess(e) {
+    e.preventDefault();
+
+    // Inicio
+    console.log(`\n————————————————————\nEjercicio #01\n————————————————————`);
 
     e.preventDefault();
 
@@ -27,7 +26,6 @@ function proccess(e) {
         } while (isNaN(_userNumber));
 
         // Verificar si el número ingresado es un entero
-        
         if (_userNumber % _n1 != _n0) {
             alert(`El número ingresado no es un entero.\n`);
         }
@@ -43,4 +41,4 @@ function proccess(e) {
     }
 }
 
-_start.onsubmit = proccess;
+document.getElementById("start01").onsubmit = proccess;

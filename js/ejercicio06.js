@@ -1,16 +1,13 @@
-// Inicio
-console.log(`Ejercicio #06`);
-let _start;
-_start = document.getElementById("start");
-
 function proccess(e) {
-
     e.preventDefault();
 
+    // Inicio
+    console.log(`\n————————————————————\nEjercicio #06\n————————————————————`);
+    console.log(`Aún no ha sido implementado.`);
 
 
 
 
 }
 
-_start.onsubmit = proccess;
+document.getElementById("start06").onsubmit = proccess;
