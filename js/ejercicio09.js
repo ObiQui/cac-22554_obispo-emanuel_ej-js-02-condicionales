@@ -137,7 +137,7 @@ function iniciar(e) {
     _angB = parseInt(_angB);
     _angC = parseInt(_angC);
 
-    // Verificar si el triangulo es posible
+    // Verificar si el triángulo es posible
     _angSuma = _angA + _angB + _angC;
 
     if (_angSuma > _n180) {
