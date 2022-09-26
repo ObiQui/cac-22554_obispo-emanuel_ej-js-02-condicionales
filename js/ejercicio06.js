@@ -103,22 +103,22 @@ function proccess(e) {
     _temp =_empPaga.replaceAll('.', '');
     _empPaga = _temp;
 
-    // Calculando aportes
+    // Calculando aportes - Regla de 3 simple
     if (_empPaga < _n20M) {
         // El salario es inferior a $20.000
-        _aporte = (_empPaga * _n0p7) / 100;
+        _aporte = (_empPaga * _n0p7) / _n100;
 
     } else if (_empPaga >= _n20M && _empPaga < _n30M) {
         // El salario esta entre los $20.000 y $29.999
-        _aporte = (_empPaga * _n1p4) / 100;
+        _aporte = (_empPaga * _n1p4) / _n100;
 
     } else if (_empPaga >= _n30M && _empPaga < _n40M) {
         // El salario esta entre los $30.000 y $39.999
-        _aporte = (_empPaga * _n2p1) / 100;
+        _aporte = (_empPaga * _n2p1) / _n100;
 
     } else {
         // El salario es igual o mayor a $40.000
-        _aporte = (_empPaga * _n2p8) / 100;
+        _aporte = (_empPaga * _n2p8) / _n100;
     }
 
     // Aporte extra por edad
@@ -132,9 +132,9 @@ function proccess(e) {
     console.log(`
     ————————————————————
     Edad: ${_empEdad}
-    Salario sin aportes: ${_empPaga}
-    Salario con aportes: ${_pagaConAp}
+    Salario: ${_empPaga}
     Aporte: ${_aporte}
+    Salario con aportes: ${_pagaConAp}
     ————————————————————`);
 
 
