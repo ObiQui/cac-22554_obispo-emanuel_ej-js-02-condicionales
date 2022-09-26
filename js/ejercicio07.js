@@ -17,14 +17,14 @@ function iniciar(e) {
     let _temp1;          // Variable temporal 1
     let _temp2;          // Variable temporal 2
     let _temp3;          // Variable temporal 3
-    const _n0 = 0;      // Número Cero
-    const _n1 = 1;      // Número Uno
+    const _n0 = 0;      // Número 0
+    const _n1 = 1;      // Número 1
 
     // Establecer el valor de las variables '_nA', '_nB' y '_nC'
     do {
         do {
             // Ingresar el valor de A
-            _nA = prompt(`Ingrese n número entero para el valor de A.\nRecuerde que no debe repetir los números ingresados o caracteres especiales.`);
+            _nA = prompt(`Ingrese un número entero para el valor de A.\nRecuerde que no debe repetir los números ingresados o caracteres especiales.`);
             if (_nA == null) {
                 console.log(`Ejercicio cancelado.`);
                 return;
@@ -46,7 +46,7 @@ function iniciar(e) {
         do {
             do {
                 // Ingresar el valor de B
-                _nB = prompt(`Ingrese n número entero para el valor de B.\nRecuerde que no debe repetir los números ingresados o caracteres especiales.`);
+                _nB = prompt(`Ingrese un número entero para el valor de B.\nRecuerde que no debe repetir los números ingresados o caracteres especiales.`);
                 if (_nB == null) {
                     console.log(`Ejercicio cancelado.`);
                     return;
@@ -75,7 +75,7 @@ function iniciar(e) {
             do {
                 do {
                     // Ingresar el valor de C
-                    _nC = prompt(`Ingrese n número entero para el valor de C.\nRecuerde que no debe repetir los números ingresados o caracteres especiales.`);
+                    _nC = prompt(`Ingrese un número entero para el valor de C.\nRecuerde que no debe repetir los números ingresados o caracteres especiales.`);
                     if (_nC == null) {
                         console.log(`Ejercicio cancelado.`);
                         return;

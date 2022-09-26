@@ -8,8 +8,8 @@ function iniciar(e) {
     let _userAge;       // User's age
     let _userGender;    // User's gender
     let _temp1;         // Para usos varios
-    let _temp2;         // falta o faltan
-    let _temp3;         // año o años
+    let _temp2;         // Falta o faltan
+    let _temp3;         // Año o años
     let _pass = false;
     const _n0 = 0;
     const _n1 = 1;

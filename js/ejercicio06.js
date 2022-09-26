@@ -10,8 +10,8 @@ function iniciar(e) {
     let _salarioConAp;      // Salario después de descontar los aportes
     let _aporte;            // Aportes al sindicato
     let _temp;              // Variable temporal
-    const _n0 = 0;          // Número 0 - Cero
-    const _n1 = 1;          // Número 1 - Uno
+    const _n0 = 0;          // Número 0
+    const _n1 = 1;          // Número 1
     const _n0p3 = 0.3;      // Número 0.3 - 30%
     const _n0p7 = 0.7;      // Número 2.7
     const _n1p4 = 1.4;      // Número 1.4
