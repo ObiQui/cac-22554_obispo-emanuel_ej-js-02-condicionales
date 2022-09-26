@@ -7,7 +7,6 @@ function proccess(e) {
 
 
 
-
 }
 
 document.getElementById("start07").onsubmit = proccess;

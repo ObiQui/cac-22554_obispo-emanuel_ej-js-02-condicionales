@@ -5,11 +5,11 @@ function proccess(e) {
     console.log(`\n————————————————————\nEjercicio #05\n————————————————————`);
 
     // Definir variables
-    let _userAge;
-    let _userGender;
-    let _temp;
-    let _falta;
-    let _anio;
+    let _userAge;       // User's age
+    let _userGender;    // User's gender
+    let _temp1;         // Para usos varios
+    let _temp2;         // falta o faltan
+    let _temp3;         // año o años
     let _pass = false;
     const _n0 = 0;
     const _n1 = 1;
@@ -74,8 +74,8 @@ function proccess(e) {
         } while (_userGender.length > 1);
 
         // Borrar letras más hallá de la primera y convertirla en mayuscula
-        _temp = _userGender.toUpperCase();
-        _userGender = _temp;
+        _temp1 = _userGender.toUpperCase();
+        _userGender = _temp1;
 
 
         // Verificar si se ingresó el dato correcto
@@ -103,17 +103,17 @@ function proccess(e) {
 
         } else {
             // Le falta para jubilarse
-            _temp = _n65 - _userAge;
+            _temp1 = _n65 - _userAge;
 
-            if (_temp == 1) {
-                _falta = "falta";
-                _anio = "año";
+            if (_temp1 == 1) {
+                _temp2 = "falta";
+                _temp3 = "año";
             } else {
-                _falta = "faltan";
-                _anio = "años";
+                _temp2 = "faltan";
+                _temp3 = "años";
             }
 
-            console.log(`\n————————————————————\nGénero: Masculino\nEdad: ${_userAge}\nLe ${_falta} ${_temp} ${_anio} para jubilarse.\n————————————————————`);
+            console.log(`\n————————————————————\nGénero: Masculino\nEdad: ${_userAge}\nLe ${_temp2} ${_temp1} ${_temp3} para jubilarse.\n————————————————————`);
         }
 
     } else {
@@ -125,17 +125,17 @@ function proccess(e) {
 
         } else {
             // Le falta para jubilarse
-            _temp = _n60 - _userAge;
+            _temp1 = _n60 - _userAge;
 
-            if (_temp == 1) {
-                _falta = "falta";
-                _anio = "año";
+            if (_temp1 == 1) {
+                _temp2 = "falta";
+                _temp3 = "año";
             } else {
-                _falta = "faltan";
-                _anio = "años";
+                _temp2 = "faltan";
+                _temp3 = "años";
             }
 
-            console.log(`\n————————————————————\nGénero: Femenino\nEdad: ${_userAge}\nLe ${_falta} ${_temp} ${_anio} para jubilarse.\n————————————————————`);
+            console.log(`\n————————————————————\nGénero: Femenino\nEdad: ${_userAge}\nLe ${_temp2} ${_temp1} ${_temp3} para jubilarse.\n————————————————————`);
         }
 
     }
