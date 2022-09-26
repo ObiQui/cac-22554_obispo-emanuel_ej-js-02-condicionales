@@ -4,8 +4,6 @@ function proccess(e) {
     // Inicio
     console.log(`\n————————————————————\nEjercicio #01\n————————————————————`);
 
-    e.preventDefault();
-
     // Definir variable
     let _userNumber;
     const _n0 = 0;

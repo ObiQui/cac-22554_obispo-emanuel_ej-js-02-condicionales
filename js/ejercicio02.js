@@ -4,8 +4,6 @@ function proccess(e) {
     // Inicio
     console.log(`\n————————————————————\nEjercicio #02\n————————————————————`);
 
-    e.preventDefault();
-
     // Definir variables
     let _asientos;
     let _inscriptos;
@@ -46,7 +44,7 @@ function proccess(e) {
         do {
             do {
                 // Ingresar la cantidad de inscriptos
-                _inscriptos = prompt(`Ingrese la cantidad de inscriptos.\n(Escriba un número entero)`);
+                _inscriptos = prompt(`Ingrese la cantidad de inscriptos.\n(Escriba un número entero positivo)`);
                 if (_inscriptos == null) {
                     console.log(`Ejercicio cancelado.`);
                     return;

@@ -4,19 +4,16 @@ function proccess(e) {
     // Inicio
     console.log(`\n————————————————————\nEjercicio #03\n————————————————————`);
 
-    e.preventDefault();
-
     // Definir variables
     let _nA;
     let _nB;
-    let _diff;
     const _n0 = 0;
     const _n1 = 1;
 
     // Establecer el valor de las variables '_nA' y '_nB'
     do {
         do {
-            // Ingresar la cantidad de asientos
+            // Ingresar el valor de A
             _nA = prompt(`Ingrese el valor de A.\n(Escriba un número entero)`);
             if (_nA == null) {
                 console.log(`Ejercicio cancelado.`);
@@ -37,7 +34,7 @@ function proccess(e) {
 
     do {
         do {
-            // Ingresar la cantidad de inscriptos
+            // Ingresar el valor de B
             _nB = prompt(`Ingrese el valor de B.\n(Escriba un número entero)`);
             if (_nB == null) {
                 console.log(`Ejercicio cancelado.`);
