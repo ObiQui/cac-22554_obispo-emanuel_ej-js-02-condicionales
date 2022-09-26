@@ -1,4 +1,4 @@
-function proccess(e) {
+function iniciar(e) {
     e.preventDefault();
 
     // Inicio
@@ -112,4 +112,4 @@ function proccess(e) {
     }
 }
 
-document.getElementById("start04").onsubmit = proccess;
+document.getElementById("start04").onsubmit = iniciar;

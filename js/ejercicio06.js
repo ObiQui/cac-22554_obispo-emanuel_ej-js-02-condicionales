@@ -1,4 +1,4 @@
-function proccess(e) {
+function iniciar(e) {
     e.preventDefault();
 
     // Inicio
@@ -6,8 +6,8 @@ function proccess(e) {
 
     // Definir variables
     let _empEdad;           // Edad del empleado: entre 16 y 90
-    let _empPaga;           // Salario del empleado: $10.000 o mayor
-    let _pagaConAp;         // Salario después de descontar los aportes
+    let _empSalario;        // Salario del empleado: $10.000 o mayor
+    let _salarioConAp;      // Salario después de descontar los aportes
     let _aporte;            // Aportes al sindicato
     let _temp;              // Variable temporal
     const _n0 = 0;          // Número 0 - Cero
@@ -26,7 +26,7 @@ function proccess(e) {
     const _n30M = 30000;    // Número 30.000
     const _n40M = 40000;    // Número 40.000
 
-    // Establecer el valor de las variables '_empEdad' y '_empPaga'
+    // Establecer el valor de las variables '_empEdad' y '_empSalario'
     // Ingresar la edad del empleado
     do{
         do {
@@ -72,73 +72,82 @@ function proccess(e) {
     do {
         do {
             //Ingresar el número para el salario
-            _empPaga = prompt(`Ingrese el salario mensual del empleado.\nSolo se consideran válidos los números enteros de 10.000 (diez mil) en adelante.\nEscriba el valor numérico sin caracteres especiales (puntuaciones, símbolos, etc).`);
+            _empSalario = prompt(`Ingrese el salario mensual del empleado.\nSolo se consideran válidos los números enteros de 10.000 (diez mil) en adelante.\nEscriba el valor numérico sin caracteres especiales (puntuaciones, símbolos, etc).`);
 
             // Cancelar ejercicio
-            if (_empPaga == null) {
+            if (_empSalario == null) {
                 console.log(`Ejercicio cancelado.`);
                 return;
             }
 
             // Verificar si se ha ingresado un número
-            if (isNaN(_empPaga)) {
+            if (isNaN(_empSalario)) {
                 alert(`Debe ingresar un número.`);
             }
-        } while (isNaN(_empPaga));
+        } while (isNaN(_empSalario));
 
         // Verificar si el salario es mayor o igual a 10.000
-        if (_empPaga < _n10M) {
+        if (_empSalario < _n10M) {
             alert(`El salario es inferior a 0.\nEl monto es inválido.\nIntente nuevamente.`);
         }
-    } while (_empPaga < _n10M);
+    } while (_empSalario < _n10M);
 
     // Para evitar posibles problemas
-    if (_empPaga % _n1 != _n0) {
+    if (_empSalario % _n1 != _n0) {
         alert(`El salario ingresado no es un número entero.\nLos decimales del monto serán truncados.`);
-        _empPaga = parseInt(_empPaga);
+        _empSalario = parseInt(_empSalario);
     }
 
     // Remover el punto de los números enteros
-    _empPaga = String(_empPaga);
-    _temp =_empPaga.replaceAll('.', '');
-    _empPaga = _temp;
+    _empSalario = String(_empSalario);
+    _temp =_empSalario.replaceAll('.', '');
+    _empSalario = _temp;
 
-    // Calculando aportes - Regla de 3 simple
-    if (_empPaga < _n20M) {
+    /* Calculando aportes - Regla de 3 simple
+       100% ______ $ Salario
+    Aporte% ______ $ ¿? ($ Aporte)
+    */ 
+    if (_empSalario < _n20M) {
         // El salario es inferior a $20.000
-        _aporte = (_empPaga * _n0p7) / _n100;
+        // Aporte = (0.7 * Salario) / 100
+        _aporte = (_n0p7 * _empSalario) / _n100;
 
-    } else if (_empPaga >= _n20M && _empPaga < _n30M) {
+    } else if (_empSalario >= _n20M && _empSalario < _n30M) {
         // El salario esta entre los $20.000 y $29.999
-        _aporte = (_empPaga * _n1p4) / _n100;
+        // Aporte = (Salario * 1.4) / 100
+        _aporte = (_n1p4 * _empSalario) / _n100;
 
-    } else if (_empPaga >= _n30M && _empPaga < _n40M) {
-        // El salario esta entre los $30.000 y $39.999
-        _aporte = (_empPaga * _n2p1) / _n100;
+    } else if (_empSalario >= _n30M && _empSalario < _n40M) {
+        // El salario esta entre los $30.000 y $39.999 
+        // Aporte = (Salario * 2.1) / 100
+        _aporte = (_n2p1 * _empSalario) / _n100;
 
     } else {
         // El salario es igual o mayor a $40.000
-        _aporte = (_empPaga * _n2p8) / _n100;
+        // Aporte = (Salario * 2.8) / 100
+        _aporte = (_n2p8 * _empSalario) / _n100;
     }
 
     // Aporte extra por edad
-    if (_empEdad <= _n30) {
+    if (_empEdad < _n30) {
+        // Aporte = (aporte * 0.3) + aporte
         _aporte = (_aporte * _n0p3) + _aporte;
+        
     }
 
     // Salario final
-    _pagaConAp = _empPaga - _aporte;
+    _salarioConAp = _empSalario - _aporte;
 
     console.log(`
     ————————————————————
     Edad: ${_empEdad}
-    Salario: ${_empPaga}
+    Salario: ${_empSalario}
     Aporte: ${_aporte}
-    Salario con aportes: ${_pagaConAp}
+    Salario con aportes: ${_salarioConAp}
     ————————————————————`);
 
 
 
 }
 
-document.getElementById("start06").onsubmit = proccess;
+document.getElementById("start06").onsubmit = iniciar;
