@@ -15,7 +15,11 @@ function proccess(e) {
     // Verificar si el número es un entero
     do {
         do {
-            _userNumber = parseFloat(prompt(`Ingresa un número entero.`));
+            _userNumber = prompt(`Ingresa un número entero.`);
+            if (_userNumber == null) {
+                console.log(`Ejercicio cancelado.`);
+                return;
+            }
 
             // Verificar si el caracter ingresado es un número
             if (isNaN(_userNumber)) {

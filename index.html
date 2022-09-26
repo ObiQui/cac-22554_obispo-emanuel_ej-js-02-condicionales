@@ -5,63 +5,98 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio de JS (2)</title>
+    <title>JS: Ejercicios de Condicionales</title>
 </head>
 
 <body>
     <main class="m-5">
         <h2 class="fw-bold">Ejercicios de Condicionales en JavaScript</h2>
-        <p class="fs-5">Antes de empezar, habra la consola del navegador para ver la ejecución del ejercicio apropiadamente.</p>
+        <p class="fs-5">Antes de empezar, habra la consola del navegador para ver apropiadamente la ejecución y resultado de los ejercicios.</p>
 
-        <ul class="list-unstyled mt-3">
-            <li class="mt-1">
-                <form id="start01">
-                    <input type="submit" value="Ejercicio #01" class="btn text-light fw-bold bg-success d-block">
-                </form>
-            </li>
-            <li class="mt-1">
-                <form id="start02">
-                    <input type="submit" value="Ejercicio #02" class="btn text-light fw-bold bg-success d-block">
-                </form>
-            </li>
-            <li class="mt-1">
-                <form id="start03">
-                    <input type="submit" value="Ejercicio #03" class="btn text-light fw-bold bg-success d-block">
-                </form>
-            </li>
-            <li class="mt-1">
-                <form id="start04">
-                    <input type="submit" value="Ejercicio #04" class="btn text-light fw-bold bg-success d-block">
-                </form>
-            </li>
-            <li class="mt-1">
-                <form id="start05">
-                    <input type="submit" value="Ejercicio #05" class="btn text-light fw-bold bg-success d-block">
-                </form>
-            </li>
-            <li class="mt-1">
-                <form id="start06">
-                    <input type="submit" value="Ejercicio #06" class="btn text-light fw-bold bg-success d-block">
-                </form>
-            </li>
-            <li class="mt-1">
-                <form id="start07">
-                    <input type="submit" value="Ejercicio #07" class="btn text-light fw-bold bg-success d-block">
-                </form>
-            </li>
-            <li class="mt-1">
-                <form id="start08">
-                    <input type="submit" value="Ejercicio #08" class="btn text-light fw-bold bg-success d-block">
-                </form>
-            </li>
-        </ul>
+        <div class="btn text-light bg-secondary d-block mt-3" style="width: fit-content;">
+            <a href="docs/2_JavaScript - Ejercicios de condicionales.pdf" target="_blank" class="text-light fw-bold text-decoration-none">Enunciados de los ejercicios</a>
+        </div>
+
+        <div class="row row-cols-1">
+            <!-- Primera Columna -->
+            <div class="col-3">
+                <ul class="list-unstyled mt-3">
+                    <li class="mt-1">
+                        <form id="start01">
+                            <input type="submit" value="Ejercicio #01" class="btn text-light fw-bold bg-success d-block">
+                        </form>
+                    </li>
+                    <li class="mt-1">
+                        <form id="start02">
+                            <input type="submit" value="Ejercicio #02" class="btn text-light fw-bold bg-success d-block">
+                        </form>
+                    </li>
+                    <li class="mt-1">
+                        <form id="start03">
+                            <input type="submit" value="Ejercicio #03" class="btn text-light fw-bold bg-success d-block">
+                        </form>
+                    </li>
+                    <li class="mt-1">
+                        <form id="start04">
+                            <input type="submit" value="Ejercicio #04" class="btn text-light fw-bold bg-success d-block">
+                        </form>
+                    </li>
+                    <li class="mt-1">
+                        <form id="start05">
+                            <input type="submit" value="Ejercicio #05" class="btn text-light fw-bold bg-success d-block">
+                        </form>
+                    </li>
+                    <li class="mt-1">
+                        <form id="start06">
+                            <input type="submit" value="Ejercicio #06" class="btn text-light fw-bold bg-success d-block">
+                        </form>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Segunda Columna -->
+            <div class="col-2">
+                <ul class="list-unstyled mt-3">
+                    <li class="mt-1">
+                        <form id="start07">
+                            <input type="submit" value="Ejercicio #07" class="btn text-light fw-bold bg-success d-block">
+                        </form>
+                    </li>
+                    <li class="mt-1">
+                        <form id="start08">
+                            <input type="submit" value="Ejercicio #08" class="btn text-light fw-bold bg-success d-block">
+                        </form>
+                    </li>
+                    <li class="mt-1">
+                        <form id="start09">
+                            <input type="submit" value="Ejercicio #09" class="btn text-light fw-bold bg-success d-block">
+                        </form>
+                    </li>
+                    <li class="mt-1">
+                        <form id="start10">
+                            <input type="submit" value="Ejercicio #10" class="btn text-light fw-bold bg-success d-block">
+                        </form>
+                    </li>
+                    <li class="mt-1">
+                        <form id="start11">
+                            <input type="submit" value="Ejercicio #11" class="btn text-light fw-bold bg-success d-block">
+                        </form>
+                    </li>
+                    <li class="mt-1">
+                        <form id="start12">
+                            <input type="submit" value="Ejercicio #12" class="btn text-light fw-bold bg-success d-block">
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </div>
 
         <form id="inputClear" class="mt-3">
-            <input type="submit" value="Limpiar la consola del navegador." class="btn text-light fw-bold bg-secondary d-block">
+            <input type="submit" value="Limpiar la consola del navegador" class="btn text-light fw-bold bg-secondary d-block">
         </form>
 
         <div class="btn text-light bg-danger d-block mt-3" style="width: fit-content;">
-            <a href="https://github.com/ObiQui/cac-22554_obispo-emanuel_ej-js-01-intro" class="text-light fw-bold text-decoration-none">Ir la repositorio.</a>
+            <a href="https://github.com/ObiQui/cac-22554_obispo-emanuel_ej-js-01-intro" class="text-light fw-bold text-decoration-none">Ir al repositorio</a>
         </div>
 
     </main>
