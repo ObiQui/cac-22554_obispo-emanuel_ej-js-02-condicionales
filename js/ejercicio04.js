@@ -23,7 +23,7 @@ function iniciar(e) {
 
             // Verificar si el caracter ingresado es un número
             if (isNaN(_nA)) {
-                alert(`No se ha ingresado no un número.`);
+                alert(`No se ha ingresado un número.`);
             }
         } while (isNaN(_nA));
 
@@ -65,7 +65,7 @@ function iniciar(e) {
 
             // Verificar si el caracter ingresado es un número
             if (isNaN(_nC)) {
-                alert(`No se ha ingresado no un número.`);
+                alert(`No se ha ingresado un número.`);
             }
         } while (isNaN(_nC));
 

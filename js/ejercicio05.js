@@ -11,6 +11,8 @@ function iniciar(e) {
     let _temp2;         // Falta o faltan
     let _temp3;         // Año o años
     let _pass = false;
+    const _genderM = "M";
+    const _genderF = "F";
     const _n0 = 0;
     const _n1 = 1;
     const _n60 = 60;
@@ -79,11 +81,11 @@ function iniciar(e) {
 
 
         // Verificar si se ingresó el dato correcto
-        if (_userGender.indexOf("M") > -1 ) {
+        if (_userGender.indexOf(_genderM) > -1 ) {
             // Letra 'M' encontrada
             _pass = true;
 
-        } else if (_userGender.indexOf("F") > -1 ) {
+        } else if (_userGender.indexOf(_genderF) > -1 ) {
             // Letra 'F' encontrada
             _pass = true;
         }
@@ -94,7 +96,7 @@ function iniciar(e) {
     } while (_pass == false);
 
     // Presentar información
-    if (_userGender == "M") {
+    if (_userGender == _genderM) {
         // El usuario es de género masculino
 
         if (_userAge >= _n65)  {
@@ -105,7 +107,7 @@ function iniciar(e) {
             // Le falta para jubilarse
             _temp1 = _n65 - _userAge;
 
-            if (_temp1 == 1) {
+            if (_temp1 == _n1) {
                 _temp2 = "falta";
                 _temp3 = "año";
             } else {
@@ -127,7 +129,7 @@ function iniciar(e) {
             // Le falta para jubilarse
             _temp1 = _n60 - _userAge;
 
-            if (_temp1 == 1) {
+            if (_temp1 == _n1) {
                 _temp2 = "falta";
                 _temp3 = "año";
             } else {
