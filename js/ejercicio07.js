@@ -20,11 +20,12 @@ function iniciar(e) {
     const _n0 = 0;      // Número 0
     const _n1 = 1;      // Número 1
 
+    alert("A continuación deberá ingresar el valor de 3 elementos (A, B y C) sin repetir.\nSolo se admitirán números enteros como valores correctos.")
     // Establecer el valor de las variables '_nA', '_nB' y '_nC'
     do {
         do {
             // Ingresar el valor de A
-            _nA = prompt(`Ingrese un número entero para el valor de A.\nRecuerde que no debe repetir los números ingresados o caracteres especiales.`);
+            _nA = prompt(`Ingrese un número entero para el valor de A.`);
             if (_nA == null) {
                 console.log(`Ejercicio cancelado.`);
                 return;
@@ -46,7 +47,7 @@ function iniciar(e) {
         do {
             do {
                 // Ingresar el valor de B
-                _nB = prompt(`Ingrese un número entero para el valor de B.\nRecuerde que no debe repetir los números ingresados o caracteres especiales.`);
+                _nB = prompt(`Ingrese un número entero para el valor de B.`);
                 if (_nB == null) {
                     console.log(`Ejercicio cancelado.`);
                     return;
@@ -75,7 +76,7 @@ function iniciar(e) {
             do {
                 do {
                     // Ingresar el valor de C
-                    _nC = prompt(`Ingrese un número entero para el valor de C.\nRecuerde que no debe repetir los números ingresados o caracteres especiales.`);
+                    _nC = prompt(`Ingrese un número entero para el valor de C.`);
                     if (_nC == null) {
                         console.log(`Ejercicio cancelado.`);
                         return;
