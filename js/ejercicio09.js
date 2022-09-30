@@ -13,16 +13,16 @@ function iniciar(e) {
     //////////////////////////////////////////////////
     // VARIABLES
 
-    let _temp;          // Variable temporal
+    let _ladoA = 0;          // Primer ángulo
+    let _ladoB = 0;          // Segundo ángulo
+    let _ladoC = 0;          // Tercer ángulo
 
-    let _ladoA;          // Primer ángulo
-    let _ladoB;          // Segundo ángulo
-    let _ladoC;          // Tercer ángulo
+    let _temp;          // Variable temporal
 
     const _n0 = 0;      // Número 0
     const _n1 = 1;      // Número 1
 
-    let _triangulo = "";     // Tipo de triángulo: Equilatero, isóseles o escaleno
+    let _triangulo = "";     // Tipo de triángulo: Equilátero, isóseles, escaleno o inválido
 
 
 
@@ -30,13 +30,43 @@ function iniciar(e) {
     //////////////////////////////////////////////////
     // MENSAJE
 
-    alert(`A continuación deberá ingresar el la longitud de los 3 lados de un triángulo.\nRecuerde que para que un triángulo sea válido, cada uno de sus lados no puede ser más largo que la suma de los otros dos.`)
+    console.log(`Ingrese la longitud (en centímetros) de los 3 lados de un triángulo.\nRecuerde que para que un triángulo sea válido, cada uno de sus lados no puede ser más largo que la suma de los otros dos.`)
+
+    alert(`Ingrese la longitud (en centímetros) de los 3 lados de un triángulo.\nRecuerde que para que un triángulo sea válido, cada uno de sus lados no puede ser más largo que la suma de los otros dos.`)
 
 
 
     //////////////////////////////////////////////////
     //////////////////////////////////////////////////
     // FUNCIONES
+
+    function ingresarNumero(_mensaje) {
+        do {
+            // Ingresar el número que se asignará a '_temp'
+            _temp = prompt(`${_mensaje}`, _n0);
+
+            // Si se presiona "Cancelar" en el prompt
+            if (_temp == null) {
+                // Cancelar el ejercicio
+                _quit = true;
+                return;
+            }
+            
+            if (_temp == "") {
+                // Si no se ingreso ningún valor, el predeterminado es 0 (cero)
+                _temp = _n0;
+            }
+
+            // Verificar si el número es correcto
+            if (isNaN(_temp) || _temp < _n1) {
+                alert(`Ha ingresado: ${_temp}.\nDebes ingresar un número positivo.\n————————————————————`);
+            }
+
+        } while (isNaN(_temp) || (_temp < _n1));
+
+        // Regresar valor de '_temp'
+        return _temp;
+    }
 
 
 
@@ -45,142 +75,72 @@ function iniciar(e) {
     // CÓDIGO PRINCIPAL
 
     // Establecer el valor de las variables '_ladoA', '_ladoB' y '_ladoC'
-    // Ingresar el primer lado
-    do {
-        do {
-            do {
-                // Ingresar el valor de A
-                _ladoA = prompt(`Ingrese el valor del primer ángulo.\nEl número debe ser un entero positivo.`);
-                if (_ladoA == null) {
-                    console.log(`Ejercicio cancelado.`);
-                    return;
-                }
-    
-                // Verificar si el caracter ingresado es un número
-                if (isNaN(_ladoA)) {
-                    alert(`No se ha ingresado no un número.`);
-                }
-            } while (isNaN(_ladoA));
-    
-            // Verificar si el número ingresado es un entero
-            if (_ladoA % _n1 != _n0) {
-                alert(`El número ingresado no es un entero.\n`);
-            }
-        } while (_ladoA % _n1 != _n0);
 
-        // Verificar si el número ingresado es un entero
-        if (_ladoA < _n1) {
-            alert(`El número ingresado debe ser positivo.\n`);
-        }
-    } while (_ladoA < _n1);
+    // Obtener la longitud del primer lado
+    while (_ladoA < _n1) {
 
-    // Establecer el segundo lado
-    do {
-        do {
-            do {
-                // Ingresar el valor de B
-                _ladoB = prompt(`Ingrese el valor del segundo ángulo.\nEl número debe ser un entero positivo.`);
-                if (_ladoB == null) {
-                    console.log(`Ejercicio cancelado.`);
-                    return;
-                }
+        // Llamar a la función para obtener el valor de A
+        _ladoA = ingresarNumero(`Ingresar la longitud en centímetros del lado A.`);
 
-                // Verificar si el caracter ingresado es un número
-                if (isNaN(_ladoB)) {
-                    alert(`No se ha ingresado no un número.`);
-                }
-            } while (isNaN(_ladoB));
-    
-            // Verificar si el número ingresado es un entero
-            if (_ladoB % _n1 != _n0) {
-                alert(`El número ingresado no es un entero.\n`);
-            }
-        } while (_ladoB % _n1 != _n0);
-
-        // Verificar si el número ingresado es un entero
-        if (_ladoB < _n1) {
-            alert(`El número ingresado debe ser positivo.\n`);
-        }
-    } while (_ladoB < _n1);
-
-    // Establecer el tercer lado
-    do {
-        do {
-            do {
-                // Ingresar el valor de C
-                _ladoC = prompt(`Ingrese el valor del tercer ángulo.\nEl número debe ser un entero positivo.`);
-                if (_ladoC == null) {
-                    console.log(`Ejercicio cancelado.`);
-                    return;
-                }
-
-                // Verificar si el caracter ingresado es un número
-                if (isNaN(_ladoC)) {
-                    alert(`No se ha ingresado no un número.`);
-                }
-            } while (isNaN(_ladoC));
-    
-            // Verificar si el número ingresado es un entero
-            if (_ladoC % _n1 != _n0) {
-                alert(`El número ingresado no es un entero.\n`);
-            }
-        } while (_ladoC % _n1 != _n0);
-
-        // Verificar si el número ingresado es un entero
-        if (_ladoC < _n1) {
-            alert(`El número ingresado debe ser positivo.\n`);
-        }
-    } while (_ladoC < _n1);
-
-    // parseInt evita un problema al comprar con números negativos
-    _ladoA = parseInt(_ladoA);
-    _ladoB = parseInt(_ladoB);
-    _ladoC = parseInt(_ladoC);
-
-    // Verificar si el triángulo es un error
-    if (_ladoA > (_ladoB + _ladoC)) {
-        // El triángulo es inválido
-        _temp = false;
-
-    } else if (_ladoB > (_ladoA + _ladoC)) {
-        // El triángulo es inválido
-        _temp = false;
-
-    } else if (_ladoC > (_ladoA + _ladoB)) {
-        // El triángulo es inválido
-        _temp = false;
-    } else {
-        // El triángulo es válido
-        _temp = true;
+        // Aplicar parseFloat al valor A
+        _ladoA = parseFloat(_ladoA);
     }
 
+    // Obtener la longitud del segundo lado
+    while (_ladoB < _n1) {
 
-    // Verificar que tipo de triángulo se ingreso
-    if (_temp == false) {
-        // Se ingresó un triángulo rectángulo
+        // Llamar a la función para obtener el valor de B
+        _ladoB = ingresarNumero(`Ingresar la longitud en centímetros del lado B.`);
+
+        // Aplicar parseFloat al valor B
+        _ladoB = parseFloat(_ladoB);
+    }
+
+    // Obtener la longitud del tercer lado
+    while (_ladoC < _n1) {
+
+        // Llamar a la función para obtener el valor de C
+        _ladoC = ingresarNumero(`Ingresar la longitud en centímetros del lado C.`);
+
+        // Aplicar parseFloat al valor C
+        _ladoC = parseFloat(_ladoC);
+    }
+
+    // Verificar si el triángulo es un válido y que tipo de triángulo se ingresó
+    if (_ladoA > (_ladoB + _ladoC)) {
+
+        // El triángulo es inválido
+        _triangulo = "inválido";
+
+    } else if (_ladoB > (_ladoA + _ladoC)) {
+
+        // El triángulo es inválido
+        _triangulo = "inválido";
+
+    } else if (_ladoC > (_ladoA + _ladoB)) {
+
+        // El triángulo es inválido
         _triangulo = "inválido";
 
     } else if (_ladoA == _ladoB && _ladoA == _ladoC) {
+
         // Se ingresó un triángulo equilátero
         _triangulo = "equilátero";
 
     } else if (_ladoA != _ladoB && _ladoA != _ladoC && _ladoB != _ladoC) {
+
         // Se ingresó un triángulo escaleno
         _triangulo = "escaleno";
 
     } else {
+
         // Se ingresó un triángulo isóseles
         _triangulo = "isóseles";
+
     }
 
     // Presentar datos
-    console.log(`
-        ————————————————————
-        1er lado: ${_ladoA}
-        2do lado: ${_ladoB}
-        3er lado: ${_ladoC}
-        Se ingresó un triángulo ${_triangulo}.
-        ————————————————————`);
+    console.log(`————————————————————\n1er lado: ${_ladoA}\n2do lado: ${_ladoB}\n3er lado: ${_ladoC}\nSe ingresó un triángulo ${_triangulo}.\n————————————————————`);
 }
 
 document.getElementById("start09").onsubmit = iniciar;
