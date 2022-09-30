@@ -1,15 +1,31 @@
 function iniciar(e) {
     e.preventDefault();
 
-    // Inicio
+    //////////////////////////////////////////////////
+    //////////////////////////////////////////////////
+    // INICIO
+
     console.log(`\n————————————————————\nEjercicio #08\n————————————————————`);
 
-    // Definir variables
+
+
+    //////////////////////////////////////////////////
+    //////////////////////////////////////////////////
+    // VARIABLES
+
     let _nA;        // Número A
     let _nB;        // Número B
-    let _string;    // Texto
+
     const _n0 = 0;  // Número cero
     const _n1 = 1;  // Número uno
+
+    let _string;    // Texto
+
+
+
+    //////////////////////////////////////////////////
+    //////////////////////////////////////////////////
+    // CÓDIGO PRINCIPAL
 
     // Establecer el valor de las variables '_nA' y '_nB'
     do {

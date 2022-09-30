@@ -1,26 +1,50 @@
 function iniciar(e) {
     e.preventDefault();
 
-    // Inicio
+    //////////////////////////////////////////////////
+    //////////////////////////////////////////////////
+    // INICIO
+
     console.log(`\n————————————————————\nEjercicio #07\n————————————————————`);
 
-    // Definir variables
+
+
+    //////////////////////////////////////////////////
+    //////////////////////////////////////////////////
+    // VARIABLES
+
+    let _temp1;         // Variable temporal 1
+    let _temp2;         // Variable temporal 2
+    let _temp3;         // Variable temporal 3
+
     let _nA;            // Número A
     let _nB;            // Número B
     let _nC;            // Número C
     let _mayor;         // Número más grande
     let _medio;         // Número intermedio
     let _menor;         // Número menor
-    let _BmA = false;   // B es mayor que A
-    let _BmC = false;   // B es mayor que C
-    let _CmA = false;   // C es mayor que A
-    let _temp1;          // Variable temporal 1
-    let _temp2;          // Variable temporal 2
-    let _temp3;          // Variable temporal 3
+
     const _n0 = 0;      // Número 0
     const _n1 = 1;      // Número 1
 
+    let _BmA = false;   // B es mayor que A
+    let _BmC = false;   // B es mayor que C
+    let _CmA = false;   // C es mayor que A
+
+
+
+    //////////////////////////////////////////////////
+    //////////////////////////////////////////////////
+    // MENSAJE
+
     alert("A continuación deberá ingresar el valor de 3 elementos (A, B y C) sin repetir.\nSolo se admitirán números enteros como valores correctos.")
+
+
+
+    //////////////////////////////////////////////////
+    //////////////////////////////////////////////////
+    // CÓDIGO PRINCIPAL
+
     // Establecer el valor de las variables '_nA', '_nB' y '_nC'
     do {
         do {

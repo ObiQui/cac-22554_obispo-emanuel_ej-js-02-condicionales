@@ -1,22 +1,50 @@
 function iniciar(e) {
     e.preventDefault();
 
-    // Inicio
+    //////////////////////////////////////////////////
+    //////////////////////////////////////////////////
+    // INICIO
+
     console.log(`\n————————————————————\nEjercicio #09\n————————————————————`);
 
-    // Definir variables
+
+
+    //////////////////////////////////////////////////
+    //////////////////////////////////////////////////
+    // VARIABLES
+
+    let _temp;          // Variable temporal
+
     let _ladoA;          // Primer ángulo
     let _ladoB;          // Segundo ángulo
     let _ladoC;          // Tercer ángulo
-    let _triangulo;     // Tipo de triángulo
-    let _temp;          // Variable temporal
+
     const _n0 = 0;      // Número 0
     const _n1 = 1;      // Número 1
 
-    // Establecer el valor de las variables '_ladoA', '_ladoB' y '_ladoC'
+    let _triangulo = "";     // Tipo de triángulo: Equilatero, isóseles o escaleno
+
+
+
+    //////////////////////////////////////////////////
+    //////////////////////////////////////////////////
+    // MENSAJE
 
     alert(`A continuación deberá ingresar el la longitud de los 3 lados de un triángulo.\nRecuerde que para que un triángulo sea válido, cada uno de sus lados no puede ser más largo que la suma de los otros dos.`)
 
+
+
+    //////////////////////////////////////////////////
+    //////////////////////////////////////////////////
+    // FUNCIONES
+
+
+
+    //////////////////////////////////////////////////
+    //////////////////////////////////////////////////
+    // CÓDIGO PRINCIPAL
+
+    // Establecer el valor de las variables '_ladoA', '_ladoB' y '_ladoC'
     // Ingresar el primer lado
     do {
         do {

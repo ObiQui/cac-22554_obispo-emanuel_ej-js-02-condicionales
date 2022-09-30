@@ -1,16 +1,27 @@
 function iniciar(e) {
     e.preventDefault();
 
-    // Inicio
+    //////////////////////////////////////////////////
+    //////////////////////////////////////////////////
+    // INICIO
+
     console.log(`\n————————————————————\nEjercicio #05\n————————————————————`);
 
-    // Definir variables
-    let _userAge;       // User's age
-    let _userGender;    // User's gender
+
+
+    //////////////////////////////////////////////////
+    //////////////////////////////////////////////////
+    // VARIABLES
+
     let _temp1;         // Para usos varios
     let _temp2;         // Falta o faltan
     let _temp3;         // Año o años
+
+    let _userAge;       // User's age
+    let _userGender;    // User's gender
+
     let _pass = false;
+
     const _genderM = "M";
     const _genderF = "F";
     const _n0 = 0;
@@ -18,6 +29,12 @@ function iniciar(e) {
     const _n60 = 60;
     const _n65 = 65;
     const _n120 = 120;
+
+
+
+    //////////////////////////////////////////////////
+    //////////////////////////////////////////////////
+    // CÓDIGO PRINCIPAL
 
     // Establecer la edad del usuario
     do{

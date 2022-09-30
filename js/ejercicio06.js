@@ -1,15 +1,25 @@
 function iniciar(e) {
     e.preventDefault();
 
-    // Inicio
+    //////////////////////////////////////////////////
+    //////////////////////////////////////////////////
+    // INICIO
+
     console.log(`\n————————————————————\nEjercicio #06\n————————————————————`);
 
-    // Definir variables
+
+
+    //////////////////////////////////////////////////
+    //////////////////////////////////////////////////
+    // VARIABLES
+
+    let _temp;              // Variable temporal
+
     let _empEdad;           // Edad del empleado: entre 16 y 90
     let _empSalario;        // Salario del empleado: $10.000 o mayor
     let _salarioConAp;      // Salario después de descontar los aportes
     let _aporte;            // Aportes al sindicato
-    let _temp;              // Variable temporal
+
     const _n0 = 0;          // Número 0
     const _n1 = 1;          // Número 1
     const _n0p3 = 0.3;      // Número 0.3 - 30%
@@ -25,6 +35,12 @@ function iniciar(e) {
     const _n20M = 20000;    // Número 20.000
     const _n30M = 30000;    // Número 30.000
     const _n40M = 40000;    // Número 40.000
+
+
+
+    //////////////////////////////////////////////////
+    //////////////////////////////////////////////////
+    // CÓDIGO PRINCIPAL
 
     // Establecer el valor de las variables '_empEdad' y '_empSalario'
     // Ingresar la edad del empleado

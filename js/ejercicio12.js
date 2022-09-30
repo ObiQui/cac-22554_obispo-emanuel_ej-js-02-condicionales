@@ -1,16 +1,26 @@
 function iniciar(e) {
     e.preventDefault();
 
-    // Inicio
+    //////////////////////////////////////////////////
+    //////////////////////////////////////////////////
+    // INICIO
+
     console.log(`\n————————————————————\nEjercicio #12\n————————————————————`);
 
-    // Definir las variables
+
+
+    //////////////////////////////////////////////////
+    //////////////////////////////////////////////////
+    // VARIABLES
+
+    let _temp;
+
     let _dia;       // Día de nacimiento
     let _mes;       // Nombre del mes
     let _numMes;    // Número del mes
     let _maxDias;   // Máxima cantidad de días del mes
     let _signo;     // Signo zodiacal
-    let _temp;
+
     const _n0 = 0;
     const _n1 = 1;
     const _n2 = 2;
@@ -31,7 +41,14 @@ function iniciar(e) {
     const _n29 = 29;
     const _n30 = 30;
     const _n31 = 31;
+
     const _lista = ["ERROR","Aries","Tauro","Geminis","Cancer","Leo","Virgo","Libra","Escorpio","Sagitario","Capricornio","Acuario","Picis"];
+
+
+
+    //////////////////////////////////////////////////
+    //////////////////////////////////////////////////
+    // CÓDIGO PRINCIPAL
 
     // Establecer la variable '_numMes'
     do {
