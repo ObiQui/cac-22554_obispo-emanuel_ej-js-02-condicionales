@@ -1,38 +1,52 @@
 function iniciar(e) {
     e.preventDefault();
 
-    // Inicio
+    //////////////////////////////////////////////////
+    //////////////////////////////////////////////////
+    // INICIO
+
     console.log(`\n————————————————————\nEjercicio #01\n————————————————————`);
 
-    // Definir variable
+
+
+    //////////////////////////////////////////////////
+    //////////////////////////////////////////////////
+    // VARIABLES
+
     let _userNumber;
+
     const _n0 = 0;
     const _n1 = 1;
     const _n2 = 2;
 
-    // Establecer valor de la variable '_userNumber'
 
-    // Verificar si el número es un entero
-    do {
-        do {
-            _userNumber = prompt(`Ingresa un número entero.`);
-            if (_userNumber == null) {
-                console.log(`Ejercicio cancelado.`);
-                return;
-            }
 
-            // Verificar si el caracter ingresado es un número
-            if (isNaN(_userNumber)) {
-                alert(`No se ha ingresado no un número.`);
-            }
-        } while (isNaN(_userNumber));
+    //////////////////////////////////////////////////
+    //////////////////////////////////////////////////
+    // CÓDIGO PRINCIPAL
 
-        // Verificar si el número ingresado es un entero
-        if (_userNumber % _n1 != _n0) {
+    while ((isNaN(_userNumber)) || (_userNumber % _n1 != _n0)) {
+
+        // Establecer valor de la variable '_userNumber'
+        _userNumber = prompt(`Ingresa un número entero.`);
+
+        // Si se presiona "Cancelar" en el prompt
+        if (_userNumber == null) {
+            console.log(`Ejercicio cancelado.`);
+            return;
+        }
+
+        // Verificar si el número es correcto
+        if (isNaN(_userNumber)) {
+            alert(`No se ha ingresado no un número.`);
+
+        } else if (_userNumber % _n1 != _n0) {
+            
             alert(`El número ingresado no es un entero.\n`);
         }
-    } while (_userNumber % _n1 != _n0);
+    }
 
+    // Presentar número ingresado
     console.log(`Número ingresado: ${_userNumber}`);
 
     // Verificar si el número ingresado es par o impar
