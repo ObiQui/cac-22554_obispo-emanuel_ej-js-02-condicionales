@@ -62,65 +62,6 @@ function iniciar(e) {
     //////////////////////////////////////////////////
     // CÓDIGO PRINCIPAL
 
-    // Establecer la cantidad de asientos e inscriptos
-    do {
-        do {
-            do {
-                // Ingresar la cantidad de asientos
-                _asientos = prompt(`Ingrese la cantidad de asientos.\n(Escriba un número entero positivo)`);
-                if (_asientos == null) {
-                    console.log(`Ejercicio cancelado.`);
-                    return;
-                }
-    
-                // Verificar si el caracter ingresado es un número
-                if (isNaN(_asientos)) {
-                    alert(`No se ha ingresado no un número.`);
-                }
-            } while (isNaN(_asientos));
-    
-            // Verificar si el número ingresado es un entero
-            if (_asientos % _n1 != _n0) {
-                alert(`El número ingresado no es un entero.\n`);
-            }
-        } while (_asientos % _n1 != _n0);
-
-        // Verificar si el número es igual o mayor que cero
-        if (_asientos < _n0) {
-            alert(`El número ingresado es negativo.\n`);
-        }
-    } while (_asientos < _n0);
-
-    do {
-        do {
-            do {
-                // Ingresar la cantidad de inscriptos
-                _inscriptos = prompt(`Ingrese la cantidad de inscriptos.\n(Escriba un número entero positivo)`);
-                if (_inscriptos == null) {
-                    console.log(`Ejercicio cancelado.`);
-                    return;
-                }
-    
-                // Verificar si el caracter ingresado es un número
-                if (isNaN(_inscriptos)) {
-                    alert(`No se ha ingresado no un número.`);
-                }
-            } while (isNaN(_inscriptos));
-    
-            // Verificar si el número ingresado es un entero
-            if (_inscriptos % _n1 != _n0) {
-                alert(`El número ingresado no es un entero.\n`);
-            }
-        } while (_inscriptos % _n1 != _n0);
-
-        // Verificar si el número es igual o mayor que cero
-        if (_inscriptos < _n0) {
-            alert(`El número ingresado es negativo.\n`);
-        }
-    } while (_inscriptos < _n0);
-
-
-
     // Asignar un valor a la variable '_asientos'
     while (_asientos < _n1) {
 

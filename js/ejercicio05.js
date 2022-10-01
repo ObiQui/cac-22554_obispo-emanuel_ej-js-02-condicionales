@@ -13,149 +13,238 @@ function iniciar(e) {
     //////////////////////////////////////////////////
     // VARIABLES
 
-    let _temp1;         // Para usos varios
-    let _temp2;         // Falta o faltan
-    let _temp3;         // Año o años
+    let _edad;                                  // Edad a ingresar
+    let _genero;                                // Género F o M
+    let _yearsNeeded;                           // Años necesarios para alcanzar la jubilación
 
-    let _userAge;       // User's age
-    let _userGender;    // User's gender
+    let _temp;
+
+    const _n0 = 0;
+    const _n1 = 1;
+
+    const _edadMinima = parseInt(0);                      // Edad mínima permitida a ingresar
+    const _edadMaxima = parseInt(120);                    // Edad máxima permitida a ingresar
+
+    const _jubilaciónFemenina = parseInt(60);             // Edad mínima jubilatoria femenina
+    const _jubilacionMasculina = parseInt(65);            // Edad mínima jubilatoria masculina
+
+    let _faltaFaltan = "faltan";                // Falta o faltan
+    let _yearYears = "años";                    // Año o años
+
+    const _minusFem = "f";
+    const _minusMas = "m";
+    const _signarFemenino = `F`;                // Caracter permitido correspondiente al género femenino
+    const _signarMasculino = `M`;               // Caracter permitido correspondiente al género masculino
+
+    const _generoFemenino = "Femenino";         // Texto: Femenino
+    const _generoMasculino = "Masculino"        // Texto: Masculino
 
     let _pass = false;
 
-    const _genderM = "M";
-    const _genderF = "F";
-    const _n0 = 0;
-    const _n1 = 1;
-    const _n60 = 60;
-    const _n65 = 65;
-    const _n120 = 120;
 
+
+    //////////////////////////////////////////////////
+    //////////////////////////////////////////////////
+    // FUNCIONES
+
+    // Función para registrar el género
+    function ingresarGenero(_mensaje) {
+        do {
+            // Ingresar el número que se asignará a '_temp'
+            _temp = prompt(`${_mensaje}`,"Ingrese aquí F o M.");
+
+            // Si se presiona "Cancelar" en el prompt
+            if (_temp == null) {
+                // Cancelar el ejercicio
+                _quit = true;
+                return;
+            }
+            
+            if ((_temp == "") || (_temp == "Ingrese aquí F o M.")) {
+                // Si no se ingreso ningún valor, el predeterminado es '—'
+                _temp = "—";
+            }
+
+            // Pasar "f" y "m" a mayúsculas
+            if (_temp == _minusFem) {
+                _temp = _temp.toUpperCase();
+            } else if (_temp == _minusMas) {
+                _temp = _temp.toUpperCase();
+            }
+
+            // Verificar si lo ingresado es correcto
+            if (_temp == _signarFemenino) {
+
+                // Si '_temp' es igual a "F"
+                _pass = true;
+
+            } else if (_temp == _signarMasculino) {
+
+                // Si '_temp' es igual a "M"
+                _pass = true;
+
+            } else {
+
+                // Si '_temp' no es igual a "F" o "M"
+                alert(`Ha ingresado: ${_temp}.\nDebes ingresar la letra ' F ' (efe) para femenino o la letra ' M ' (eme) para masculino.`);
+
+            }
+
+        } while (_pass == false);
+
+        // Regresar valor de '_temp'
+        return _temp;
+    }
+
+    // Función para registrar la edad
+    function ingresarNumero(_mensaje) {
+        do {
+            // Ingresar el número que se asignará a '_temp'
+            _temp = prompt(`${_mensaje}`, _n0);
+
+            // Si se presiona "Cancelar" en el prompt
+            if (_temp == null) {
+                // Cancelar el ejercicio
+                _quit = true;
+                return;
+            }
+            
+            if (_temp == "") {
+                // Si no se ingreso ningún valor, el predeterminado es 0 (cero)
+                _temp = _n0;
+            }
+
+            // Verificar si el número es correcto
+            if (isNaN(isNaN(_temp) || (_temp  % _n1 != _n0) || (_temp < _edadMinima) || (_temp > _edadMaxima))) {
+                alert(`Ha ingresado: ${_temp}.\nDebes ingresar un número entero positivo entre 0 y 120 (inclusive).`);
+            }
+
+        } while (isNaN(_temp) || (_temp  % _n1 != _n0) || (_temp < _edadMinima) || (_temp > _edadMaxima));
+
+        // Regresar valor de '_temp'
+        return _temp;
+    }
+
+    function yearsToReachRetirement() {
+
+        // Años necesarios para alcanzar la jubilación
+        if (_genero == _generoFemenino) {
+
+            // Jubilación femenina
+            _yearsNeeded = _jubilaciónFemenina - _edad; 
+
+        } else if (_genero == _generoMasculino) {
+
+            // Jubilación masculina
+            _yearsNeeded = _jubilacionMasculina - _edad; 
+
+        } else {
+
+            // Error
+            console.log(`[ERROR]`);
+            return;
+        }
+
+        // Plural o singular
+        if (_yearsNeeded != _n1) {
+
+            // Plural
+            _faltaFaltan = "faltan";
+            _yearYears = "años";
+
+        } else {
+
+            // Singular
+            _faltaFaltan = "falta";
+            _yearYears = "año";
+
+        }
+    }
+
+    function jubilacionSi() {
+
+        // Ya puede jubilar
+        console.log(`\n————————————————————\nGénero: ${_genero}\nEdad: ${_edad}\nTiene la edad suficiente para jubilarse.\n————————————————————`);
+    }
+
+    function jubilacionNo() {
+
+        // Le faltan años para jubilarse
+        console.log(`\n————————————————————\nGénero: ${_genero}\nEdad: ${_edad}\nLe ${_faltaFaltan} ${_yearsNeeded} ${_yearYears} para jubilarse.\n————————————————————`);
+    }
 
 
     //////////////////////////////////////////////////
     //////////////////////////////////////////////////
     // CÓDIGO PRINCIPAL
 
-    // Establecer la edad del usuario
-    do{
-        do {
-            do {
-                do {
-                    // Ingresar el número para la edad
-                    _userAge = prompt(`Ingrese su edad.\nSe considera como edad válida aquella entre 1 y 120 (inclusive).\nPor casos extra-ordinarios, presentarse en la sucursal más cercana.`);
-                    if (_userAge == null) {
-                        console.log(`Ejercicio cancelado.`);
-                        return;
-                    }
+    // Obtener género
+    _genero = ingresarGenero(`Ingrese su género utilizando la letra ' M ' (eme) para masculino o la letra ' F ' (efe) para femenino.`)
 
-                    // Verificar si el caracter ingresado es un número
-                    if ( isNaN(_userAge) ) {
-                        alert(`El caracter ingresado no es un número.`);
-                    }
-                } while ( isNaN(_userAge) );
+    // Obtener edad
+    _edad = ingresarNumero(`Ingrese su edad.\nSe considera como edad válida aquella entre 1 y 120 (inclusive).\nPor casos extra-ordinarios, presentarse en la sucursal más cercana.\nRecuerde que debe escribir un número entero.`);
 
-                // Verificar si el número ingresado es un entero
-                if (_userAge % _n1 != _n0) {
-                    alert(`El número ingresado no es un entero.\n`);
-                }
-            } while (_userAge % _n1 != _n0);
+    // Aplicar parseInt a la variable '_edad'
+    _edad = parseInt(_edad);
 
-            // Para evitar problemas
-            _userAge = parseInt(_userAge);
+    // Calcular datos ingresados
+    if (_genero == _signarFemenino) {
 
-            // Verificar si la edad ingresada es mayor a 0
-            if (_userAge < _n1) {
-                alert(`La edad ingresada no es válida.\n`);
-            }
-        } while ( _userAge < _n1);
+        // El registro corresponde a una persona de género femenino
+        _genero = String(_generoFemenino);
 
-        // Verificar si la edad ingresada es menor a 121
-        if (_userAge > _n120) {
-            alert(`La edad ingresada no es válida.\n`);
-        }
-    } while (_userAge > _n120 );
+        if (_edad >= _jubilaciónFemenina) {
 
-    do {
-        do {
-            // Reestablecer '_pass' como 'false'
-            _pass = false;
-
-            // Ingresar el género del usuario
-            _userGender = String(prompt(`Ingrese su género utilizando la letra ' M ' (eme) para masculino o la letra ' F ' (efe) para femenino.`));
-            if (_userGender == null || _userGender == "null") {
-                console.log(`Ejercicio cancelado.`);
-                return;
-            }
-
-            if (_userGender.length > 1) {
-                alert(`Escriba solo 1 (una) letra.\nLa letra ' M ' (eme) para masculino.\nLa letra ' F ' (efe) para femenino.`)
-            }
-        } while (_userGender.length > 1);
-
-        // Borrar letras más hallá de la primera y convertirla en mayuscula
-        _temp1 = _userGender.toUpperCase();
-        _userGender = _temp1;
-
-
-        // Verificar si se ingresó el dato correcto
-        if (_userGender.indexOf(_genderM) > -1 ) {
-            // Letra 'M' encontrada
-            _pass = true;
-
-        } else if (_userGender.indexOf(_genderF) > -1 ) {
-            // Letra 'F' encontrada
-            _pass = true;
-        }
-
-        if (_pass == false) {
-            alert(`La información ingresada es invalida.\nEscriba la letra ' M ' (eme) para masculino o la letra ' F ' (efe) para femenino.`);
-        }
-    } while (_pass == false);
-
-    // Presentar información
-    if (_userGender == _genderM) {
-        // El usuario es de género masculino
-
-        if (_userAge >= _n65)  {
             // Puede jubilarse
-            console.log(`\n————————————————————\nGénero: Masculino\nEdad: ${_userAge}\nTiene la edad suficiente para jubilarse.\n————————————————————`);
+            jubilacionSi();
+
+        } else if (_edad < _jubilaciónFemenina) {
+
+            // Calcular años faltantes para jubilarse
+            yearsToReachRetirement();
+
+            // Le falta para jubilarse
+            jubilacionNo();
 
         } else {
+
+            // Error
+            console.log(`[ERROR]`);
+            return;
+    
+        }
+
+    } else if (_genero == _signarMasculino) {
+
+        // El registro corresponde a una persona de género masculino
+        _genero = String(_generoMasculino);
+
+        if (_edad >= _jubilacionMasculina) {
+
+            // Puede jubilarse
+            jubilacionSi();
+    
+        } else if (_edad < _jubilacionMasculina) {
+
+            // Calcular años faltantes para jubilarse
+            yearsToReachRetirement();
+
             // Le falta para jubilarse
-            _temp1 = _n65 - _userAge;
-
-            if (_temp1 == _n1) {
-                _temp2 = "falta";
-                _temp3 = "año";
-            } else {
-                _temp2 = "faltan";
-                _temp3 = "años";
-            }
-
-            console.log(`\n————————————————————\nGénero: Masculino\nEdad: ${_userAge}\nLe ${_temp2} ${_temp1} ${_temp3} para jubilarse.\n————————————————————`);
+            jubilacionNo();
+    
+        } else {
+    
+            // Error
+            console.log(`[ERROR]`);
+            return;
+    
         }
 
     } else {
-        // El usuario es de género femenino
 
-        if (_userAge >= _n60)  {
-            // Puede jubilarse
-            console.log(`\n————————————————————\nGénero: Femenino\nEdad: ${_userAge}\nTiene la edad suficiente para jubilarse.\n————————————————————`);
-
-        } else {
-            // Le falta para jubilarse
-            _temp1 = _n60 - _userAge;
-
-            if (_temp1 == _n1) {
-                _temp2 = "falta";
-                _temp3 = "año";
-            } else {
-                _temp2 = "faltan";
-                _temp3 = "años";
-            }
-
-            console.log(`\n————————————————————\nGénero: Femenino\nEdad: ${_userAge}\nLe ${_temp2} ${_temp1} ${_temp3} para jubilarse.\n————————————————————`);
-        }
+        // Error
+        console.log(`[ERROR]`);
+        return;
 
     }
 }

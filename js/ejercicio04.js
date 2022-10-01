@@ -13,9 +13,11 @@ function iniciar(e) {
     //////////////////////////////////////////////////
     // VARIABLES
 
-    let _nA;
-    let _nB;
-    let _nC;
+    let _nA = "a";
+    let _nB = "b";
+    let _nC = "c";
+
+    let _temp;
 
     const _n0 = 0;
     const _n1 = 1;
@@ -24,76 +26,72 @@ function iniciar(e) {
 
     //////////////////////////////////////////////////
     //////////////////////////////////////////////////
+    // FUNCIONES
+
+    function ingresarNumero(_mensaje) {
+        do {
+            // Ingresar el número que se asignará a '_temp'
+            _temp = prompt(`${_mensaje}`, _n0);
+
+            // Si se presiona "Cancelar" en el prompt
+            if (_temp == null) {
+                // Cancelar el ejercicio
+                _quit = true;
+                return;
+            }
+            
+            if (_temp == "") {
+                // Si no se ingreso ningún valor, el predeterminado es 0 (cero)
+                _temp = _n0;
+            }
+
+            // Verificar si el número es correcto
+            if (isNaN(_temp)) {
+                alert(`Ha ingresado: ${_temp}.\nDebes ingresar un número.`);
+            }
+
+        } while (isNaN(_temp));
+
+        // Regresar valor de '_temp'
+        return _temp;
+    }
+
+
+
+    //////////////////////////////////////////////////
+    //////////////////////////////////////////////////
     // CÓDIGO PRINCIPAL
 
     // Establecer el valor de las variables '_nA', '_nB' y '_nC'
-    do {
-        do {
-            // Ingresar el valor de A
-            _nA = prompt(`Ingrese el valor de A.\n(Escriba un número entero)`);
-            if (_nA == null) {
-                console.log(`Ejercicio cancelado.`);
-                return;
-            }
+    while (_nA == "a") {
 
-            // Verificar si el caracter ingresado es un número
-            if (isNaN(_nA)) {
-                alert(`No se ha ingresado un número.`);
-            }
-        } while (isNaN(_nA));
+        // Obtener un valor para '_nA'
+        _nA = ingresarNumero(`Ingrese un número *A*.\n(Escriba un número entero positivo)`);
 
-        // Verificar si el número ingresado es un entero
-        if (_nA % _n1 != _n0) {
-            alert(`El número ingresado no es un entero.\n`);
-        }
-    } while (_nA % _n1 != _n0);
+        // Aplicar parseInt al valor de '_nA'
+        _nA = parseInt(_nA);
 
-    do {
-        do {
-            // Ingresar el valor de B
-            _nB = prompt(`Ingrese el valor de B.\n(Escriba un número entero)`);
-            if (_nB == null) {
-                console.log(`Ejercicio cancelado.`);
-                return;
-            }
+    }
 
-            // Verificar si el caracter ingresado es un número
-            if (isNaN(_nB)) {
-                alert(`No se ha ingresado no un número.`);
-            }
-        } while (isNaN(_nB));
+    while (_nB == "b") {
 
-        // Verificar si el número ingresado es un entero
-        if (_nB % _n1 != _n0) {
-            alert(`El número ingresado no es un entero.\n`);
-        }
-    } while (_nB % _n1 != _n0);
+        // Obtener un valor para '_nB'
+        _nB = ingresarNumero(`Ingrese un número *B*.\n(Escriba un número entero positivo)`);
 
-    do {
-        do {
-            // Ingresar el valor de C
-            _nC = prompt(`Ingrese el valor de C.\n(Escriba un número entero)`);
-            if (_nC == null) {
-                console.log(`Ejercicio cancelado.`);
-                return;
-            }
+        // Aplicar parseInt al valor de '_nB'
+        _nB = parseInt(_nB);
 
-            // Verificar si el caracter ingresado es un número
-            if (isNaN(_nC)) {
-                alert(`No se ha ingresado un número.`);
-            }
-        } while (isNaN(_nC));
+    }
 
-        // Verificar si el número ingresado es un entero
-        if (_nC % _n1 != _n0) {
-            alert(`El número ingresado no es un entero.\n`);
-        }
-    } while (_nC % _n1 != _n0);
+    while (_nC == "c") {
 
-    // parseInt evita un problema al comprar con números negativos
-    _nA = parseInt(_nA);
-    _nB = parseInt(_nB);
-    _nC = parseInt(_nC);
+        // Obtener un valor para '_nC'
+        _nC = ingresarNumero(`Ingrese un número *C*.\n(Escriba un número entero positivo)`);
+
+        // Aplicar parseInt al valor de '_nC'
+        _nC = parseInt(_nC);
+
+    }
 
     // Presentar los números ingresados, indicando cual es el mayor
     if ( _nA == _nB && _nA == _nC ) {
