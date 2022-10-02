@@ -68,6 +68,12 @@ function iniciar(e) {
         // Obtener un valor para '_nA'
         _nA = ingresarNumero(`Ingrese un número *A*.\n(Escriba un número entero positivo)`);
 
+        // Si se presionó el botón cancelar en el prompt
+        if (_quit == true) {
+            console.log(`Ejercicio cancelado.`);
+            return;
+        }
+
         // Aplicar parseInt al valor de '_nA'
         _nA = parseInt(_nA);
 
@@ -78,6 +84,12 @@ function iniciar(e) {
         // Obtener un valor para '_nB'
         _nB = ingresarNumero(`Ingrese un número *B*.\n(Escriba un número entero positivo)`);
 
+        // Si se presionó el botón cancelar en el prompt
+        if (_quit == true) {
+            console.log(`Ejercicio cancelado.`);
+            return;
+        }
+
         // Aplicar parseInt al valor de '_nB'
         _nB = parseInt(_nB);
 
@@ -87,6 +99,12 @@ function iniciar(e) {
 
         // Obtener un valor para '_nC'
         _nC = ingresarNumero(`Ingrese un número *C*.\n(Escriba un número entero positivo)`);
+
+        // Si se presionó el botón cancelar en el prompt
+        if (_quit == true) {
+            console.log(`Ejercicio cancelado.`);
+            return;
+        }
 
         // Aplicar parseInt al valor de '_nC'
         _nC = parseInt(_nC);

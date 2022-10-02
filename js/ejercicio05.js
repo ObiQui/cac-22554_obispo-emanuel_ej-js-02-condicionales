@@ -184,8 +184,20 @@ function iniciar(e) {
     // Obtener edad
     _edad = ingresarNumero(`Ingrese su edad.\nSe considera como edad válida aquella entre 1 y 120 (inclusive).\nPor casos extra-ordinarios, presentarse en la sucursal más cercana.\nRecuerde que debe escribir un número entero.`);
 
+    // Si se presionó el botón cancelar en el prompt
+    if (_quit == true) {
+        console.log(`Ejercicio cancelado.`);
+        return;
+    }
+
     // Aplicar parseInt a la variable '_edad'
     _edad = parseInt(_edad);
+
+    // Si se presionó el botón cancelar en el prompt
+    if (_quit == true) {
+        console.log(`Ejercicio cancelado.`);
+        return;
+    }
 
     // Calcular datos ingresados
     if (_genero == _signarFemenino) {

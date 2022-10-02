@@ -13,12 +13,11 @@ function iniciar(e) {
     //////////////////////////////////////////////////
     // VARIABLES
 
-    let _temp;
-
     let _romano;
+    let _arabico;
 
-    const _lista = ["I","II","III","V","X","L","C","D","M"];
-
+    const _listaRomano = ["I","II","III","V","X","L","C","D","M"];  // Numeros romanos
+    const _listaArabico = [1,2,3,5,10,50,100,500,1000];             // Equivalentes arábicos
 
 
     //////////////////////////////////////////////////
@@ -26,77 +25,67 @@ function iniciar(e) {
     // CÓDIGO PRINCIPAL
 
     // Establecer variables
-    do {
+    while (!_listaRomano.includes(_romano)) {
         // Ingresar letra
         _romano = String(prompt(`Ingresa un símbolo númerico romano.\nI   II   III   V   X   L   C   D   M`));
+
+        // Si se presiona el botón cancelar en el prompt
         if (_romano == null || _romano == "null") {
+            // Cancelar ejercicio
             console.log("Ejercicio cancelado.");
             return;
         }
 
         // Convertir letra en mayúscula
-        _temp = _romano.toUpperCase();
-        _romano = _temp;
+        _romano = _romano.toUpperCase();
 
         // Verificar si el caracter ingresado es válido.
-        if (_lista.includes(_romano)) {
-            _temp = true;
-        } else {
-            console,log("El caracter ingresado no corresponde a un número romano.");
-            _temp == false;
+        if (!_listaRomano.includes(_romano)) {
+            console.log("El caracter ingresado no corresponde a un número romano.");
         }
-    } while (_temp == false);
+    }
 
     // Identificar el valor del número romano
     switch (_romano) {
         case "I":
-            _romano = 1;
-            _temp = "I";
+            _arabico = _listaArabico[0];
             break;
         
         case "II":
-            _romano = 2;
-            _temp = "II";
+            _arabico = _listaArabico[1];
             break;
 
         case "III":
-            _romano = 3;
-            _temp = "III";
+            _arabico = _listaArabico[2];
             break;
 
         case "V":
-            _romano = 5;
-            _temp = "V";
+            _arabico = _listaArabico[3];
             break;
 
         case "X":
-            _romano = 10;
-            _temp = "X";
+            _arabico = _listaArabico[4];
             break;
 
         case "L":
-            _romano = 50;
-            _temp = "L";
+            _arabico = _listaArabico[5];
             break;
 
         case "C":
-            _romano = 100;
-            _temp = "C";
+            _arabico = _listaArabico[6];
             break;
         
         case "D":
-            _romano = 500;
-            _temp = "D";
+            _arabico = _listaArabico[7];
             break;
 
         case "M":
-            _romano = 1000;
-            _temp = "M";
+            _arabico = _listaArabico[8];
             break;
     }
 
     // Presentar datos
-    console.log(`${_temp} = ${_romano}`);
+    console.log(`El número arábico equivalente al número romano ${_romano} es ${_arabico}.`);
 }
 
 document.getElementById("start11").onsubmit = iniciar;

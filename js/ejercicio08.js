@@ -13,13 +13,49 @@ function iniciar(e) {
     //////////////////////////////////////////////////
     // VARIABLES
 
-    let _nA;        // Número A
-    let _nB;        // Número B
+    let _elemA;         // Número A
+    let _elemB;         // Número B
 
-    const _n0 = 0;  // Número cero
-    const _n1 = 1;  // Número uno
+    const _n0 = 0;      // Número cero
+    const _n1 = 1;      // Número uno
 
-    let _string;    // Texto
+    let _string;        // Texto
+
+    let _quit = false;  // Cancelar ejercicio
+
+
+
+    //////////////////////////////////////////////////
+    //////////////////////////////////////////////////
+    // FUNCIONES
+
+    function ingresarNumero(_mensaje) {
+        do {
+            // Ingresar el número que se asignará a '_temp'
+            _temp = prompt(`${_mensaje}`, _n0);
+
+            // Si se presiona "Cancelar" en el prompt
+            if (_temp == null) {
+                // Cancelar el ejercicio
+                _quit = true;
+                return;
+            }
+            
+            if (_temp == "") {
+                // Si no se ingreso ningún valor, el predeterminado es 0 (cero)
+                _temp = _n0;
+            }
+
+            // Verificar si el número es correcto
+            if (isNaN(_temp) || (_temp % _n1 != _n0)) {
+                alert(`Ha ingresado: ${_temp}.\nDebes ingresar un número entero.`);
+            }
+
+        } while (isNaN(_temp));
+
+        // Regresar valor de '_temp'
+        return _temp;
+    }
 
 
 
@@ -27,94 +63,80 @@ function iniciar(e) {
     //////////////////////////////////////////////////
     // CÓDIGO PRINCIPAL
 
-    // Establecer el valor de las variables '_nA' y '_nB'
-    do {
-        do {
-            // Ingresar el valor de A
-            _nA = prompt(`Ingrese un número entero para el valor de A.`);
-            if (_nA == null) {
-                console.log(`Ejercicio cancelado.`);
-                return;
-            }
+    // Establecer el valor de las variables '_elemA', '_elemB' y '_elemC'
+    while (_elemA == "UAS") {
 
-            // Verificar si el caracter ingresado es un número
-            if (isNaN(_nA)) {
-                alert(`No se ha ingresado no un número.`);
-            }
-        } while (isNaN(_nA));
+        // Asignar un valor a la variable
+        _elemA = ingresarNumero(`Ingrese un número entero para el elemento *A*.`);
 
-        // Verificar si el número ingresado es un entero
-        if (_nA % _n1 != _n0) {
-            alert(`El número ingresado no es un entero.\n`);
+        // Si se presionó el botón cancelar en el prompt
+        if (_quit == true) {
+            console.log(`Ejercicio cancelado.`);
+            return;
         }
-    } while (_nA % _n1 != _n0);
 
-    do {
-        do {
-            // Ingresar el valor de B
-            _nB = prompt(`Ingrese un número entero para el valor de B.`);
-            if (_nB == null) {
-                console.log(`Ejercicio cancelado.`);
-                return;
-            }
+        // Aplicar parseInt a la variable
+        _elemA = parseInt(_elemA);
 
-            // Verificar si el caracter ingresado es un número
-            if (isNaN(_nB)) {
-                alert(`No se ha ingresado no un número.`);
-            }
-        } while (isNaN(_nB));
+    }
 
-        // Verificar si el número ingresado es un entero
-        if (_nB % _n1 != _n0) {
-            alert(`El número ingresado no es un entero.\n`);
+    while (_elemB == "UAS" || _elemB == _elemA) {
+
+        // Asignar un valor a la variable
+        _elemB = ingresarNumero(`Ingrese un número entero para el elemento *B*.`);
+
+        // Si se presionó el botón cancelar en el prompt
+        if (_quit == true) {
+            console.log(`Ejercicio cancelado.`);
+            return;
         }
-    } while (_nB % _n1 != _n0);
 
-    // parseInt evita un problema al comprar con números negativos
-    _nA = parseInt(_nA);
-    _nB = parseInt(_nB);
+        if (_elemB == _elemA) {
 
-    console.log(`
-    ————————————————————
-    Los números ingresados son:
-    A) ${_nA}
-    B) ${_nB}
-    ————————————————————`);
+            // Si el número de *B* es igual al de *A*
+            alert(`Entrada inválida.\nEl número asignado al elemento *B* debe ser distinto al de *A*.`);
 
-    if (_nA > _nB) {
+        } else {
+
+            // Aplicar parseInt a la variable
+            _elemB = parseInt(_elemB);
+
+        }
+    }
+
+    console.log(`Los números ingresados son:\nA) ${_elemA}\nB) ${_elemB}\n————————————————————`);
+
+    if (_elemA > _elemB) {
         // A es mayor que B
 
-        if (_nA % _nB == 0) {
+        if (_elemA % _elemB == 0) {
             // A es divisible por B
-            _string = `A(${_nA}) es divisible por B(${_nB}).`;
+            _string = (`A(${_elemA}) es divisible por B(${_elemB}).`);
 
         } else {
             // A no es divisible por B
-            _string = `A(${_nA}) no es divisible por B(${_nB}).`;
+            _string = (`A(${_elemA}) no es divisible por B(${_elemB}).`);
         }
 
-    } else if (_nB > _nA) {
+    } else if (_elemB > _elemA) {
         // B es mayor que A
 
-        if (_nB % _nA == 0) {
+        if (_elemB % _elemA == 0) {
             // A es divisible por B
-            _string = `B(${_nB}) es divisible por A(${_nB}).`;
+            _string = (`B(${_elemB}) es divisible por A(${_elemB}).`);
 
         } else {
             // A no es divisible por B
-            _string = `B(${_nB}) no es divisible por A(${_nB}).`;
+            _string = (`B(${_elemB}) no es divisible por A(${_elemB}).`);
         }
     } else {
         // A y B son iguales
-        _string = `A(${_nA}) y B(${_nB}) son iguales,\n    por tanto, ambos son divisibles entre sí.`;
+        _string = (`A(${_elemA}) y B(${_elemB}) son iguales,\npor tanto, ambos son divisibles entre sí.`);
 
     }
 
     // Presentar datos
-    console.log(`
-    ————————————————————
-    ${_string}
-    ————————————————————`);
+    console.log(`${_string}\n————————————————————`);
 }
 
 document.getElementById("start08").onsubmit = iniciar;

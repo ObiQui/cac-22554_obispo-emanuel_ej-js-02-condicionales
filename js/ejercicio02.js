@@ -68,6 +68,12 @@ function iniciar(e) {
         // Obtener la cantidad de asientos disponibles
         _asientos = ingresarNumero(`Ingrese la cantidad de asientos.\n(Escriba un número entero positivo)`);
 
+        // Si se presionó el botón cancelar en el prompt
+        if (_quit == true) {
+            console.log(`Ejercicio cancelado.`);
+            return;
+        }
+
         // Aplicar parseInt al valor de '_asientos'
         _asientos = parseInt(_asientos);
 
@@ -78,6 +84,12 @@ function iniciar(e) {
 
         // Obtener la cantidad de inscriptos disponibles
         _inscriptos = ingresarNumero(`Ingrese la cantidad de inscriptos.\n(Escriba un número entero positivo)`);
+
+        // Si se presionó el botón cancelar en el prompt
+        if (_quit == true) {
+            console.log(`Ejercicio cancelado.`);
+            return;
+        }
 
         // Aplicar parseInt al valor de '_inscriptos'
         _inscriptos = parseInt(_inscriptos);

@@ -82,6 +82,12 @@ function iniciar(e) {
         // Llamar a la función para obtener el valor de A
         _ladoA = ingresarNumero(`Ingresar la longitud en centímetros del lado A.`);
 
+        // Si se presionó el botón cancelar en el prompt
+        if (_quit == true) {
+            console.log(`Ejercicio cancelado.`);
+            return;
+        }
+
         // Aplicar parseFloat al valor A
         _ladoA = parseFloat(_ladoA);
     }
@@ -92,6 +98,12 @@ function iniciar(e) {
         // Llamar a la función para obtener el valor de B
         _ladoB = ingresarNumero(`Ingresar la longitud en centímetros del lado B.`);
 
+        // Si se presionó el botón cancelar en el prompt
+        if (_quit == true) {
+            console.log(`Ejercicio cancelado.`);
+            return;
+        }
+
         // Aplicar parseFloat al valor B
         _ladoB = parseFloat(_ladoB);
     }
@@ -101,6 +113,12 @@ function iniciar(e) {
 
         // Llamar a la función para obtener el valor de C
         _ladoC = ingresarNumero(`Ingresar la longitud en centímetros del lado C.`);
+
+        // Si se presionó el botón cancelar en el prompt
+        if (_quit == true) {
+            console.log(`Ejercicio cancelado.`);
+            return;
+        }
 
         // Aplicar parseFloat al valor C
         _ladoC = parseFloat(_ladoC);
